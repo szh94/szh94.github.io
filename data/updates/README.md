@@ -1,6 +1,6 @@
 # Updates Data Format
 
-Each update is stored as a JSON file in this folder. The filename should follow `YYYY-MM-DD.json` pattern (e.g., `2026-03-27.json`). Files are automatically loaded by Jekyll and displayed on the updates page in reverse chronological order.
+Each update is stored as a JSON file in this folder. The filename should follow `YYYY-MM-DD.json` pattern (e.g., `2026-03-27.json`). Files are loaded by JavaScript and displayed on the updates page in reverse chronological order.
 
 ## JSON Schema
 
@@ -52,7 +52,8 @@ See `2026-03-27.json` for a complete example.
 
 1. Create a new JSON file with the current date (e.g., `2026-03-28.json`)
 2. Follow the schema above
-3. Commit and push to GitHub
-4. GitHub Pages will rebuild the site automatically
+3. Add the file path to the `updateFiles` array in `html/updates.html` JavaScript section
+4. Commit and push to GitHub
+5. GitHub Pages will serve the updated content
 
-No need to edit `updates.html` or any other file.
+Example: Add `'../data/updates/2026-03-28.json'` to the `updateFiles` array.

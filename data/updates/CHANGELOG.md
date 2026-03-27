@@ -3,26 +3,26 @@
 ## March 27, 2026 - Dynamic Updates System
 
 ### Overview
-Implemented a folder-based updates system that stores each update as a separate JSON file in `_data/updates/`. The updates page now automatically loads and displays all updates in reverse chronological order.
+Implemented a folder-based updates system that stores each update as a separate JSON file in `data/updates/`. The updates page now automatically loads and displays all updates in reverse chronological order using JavaScript.
 
 ### Changes Made
-- Created `_data/updates/` folder with JSON schema
-- Modified `html/updates.html` to use Jekyll data files and Liquid templates
-- Added front matter to enable Jekyll processing
-- Created template with responsive design and proper styling
+- Created `data/updates/` folder with JSON schema
+- Modified `html/updates.html` to use JavaScript to load JSON data files
+- Removed Jekyll Liquid template syntax
+- Created responsive design with proper styling
 - Updated existing update to JSON format (`2026-03-27.json`)
-- Added documentation (`_data/updates/README.md`)
+- Added documentation (`data/updates/README.md`)
 
 ### Technical Details
 - Updates are stored as JSON files with date, title, overview, and categorized changes
-- Liquid template handles sorting, type mapping, and Markdown rendering
-- No need to edit HTML when adding new updates—just add a JSON file
+- JavaScript handles sorting, type mapping, and Markdown rendering
+- When adding new updates, add the JSON file and update the JavaScript array in `html/updates.html`
 - Maintains existing visual design and responsive layout
 
 ### Files Modified
 - `html/updates.html` - Added front matter and Liquid template
-- `_data/updates/2026-03-27.json` - Converted existing update to JSON
-- `_data/updates/README.md` - Documentation
+- `data/updates/2026-03-27.json` - Converted existing update to JSON
+- `data/updates/README.md` - Documentation
 - `CHANGELOG.md` - This entry
 
 ### Impact

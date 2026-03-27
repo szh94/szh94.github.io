@@ -1,5 +1,3 @@
----
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,6 +158,21 @@
                 font-size: 1.3rem;
             }
         }
+
+        .loading, .error, .no-updates {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+
+        .no-updates {
+            color: #3498db;
+        }
     </style>
 </head>
 <body>
@@ -198,47 +211,20 @@
                 <p class="updates-subtitle">Documenting major improvements and feature updates</p>
             </div>
 
-{% assign updates = site.data.updates %}
-{% assign sorted_keys = updates | sort | reverse %}
-{% for key in sorted_keys %}
-{% assign update = updates[key] %}
-            <div class="changelog-section">
-                <h2 class="changelog-date">{{ update.date }} - {{ update.title }}</h2>
-
-                <div class="changelog-overview">
-                    <p><strong>概述：</strong>{{ update.overview }}</p>
+<div id="updates-container">
+            <!-- Updates will be loaded by JavaScript -->
+            <div class="loading">Loading updates...</div>
+            <noscript>
+                <div class="error">
+                    <p>JavaScript is required to load updates. Please enable JavaScript to view the update log.</p>
+                    <p>Alternatively, you can view the raw update files in the <code>data/updates/</code> directory.</p>
                 </div>
-
-                {% for category in update.categories %}
-                <div class="changelog-category">
-                    <h3 class="category-title">{{ category.title }}</h3>
-                    <ul class="changes-list">
-                        {% for change in category.changes %}
-                        <li>
-                            {% if change.type %}
-                              {% assign label = "" %}
-                              {% case change.type %}
-                                {% when "added" %}{% assign label = "新增" %}
-                                {% when "improvement" %}{% assign label = "改进" %}
-                                {% when "fixed" %}{% assign label = "修复" %}
-                                {% when "technical" %}{% assign label = "技术" %}
-                              {% endcase %}
-                              {% assign description = change.text | replace: label, '' | strip %}
-                              <span class="{{ change.type }}">{{ label }}</span> {{ description | markdownify }}
-                            {% else %}
-                              {{ change.text | markdownify }}
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endfor %}
-
-                <div style="text-align: center;">
-                    <a href="../index.html" class="back-to-home">返回首页</a>
-                </div>
+            </noscript>
+        </div>
+            <div style="text-align: center;">
+                <a href="../index.html" class="back-to-home">Back to Home</a>
             </div>
-{% endfor %}    </div>
+        </div>
 </div>
 <div class="footing">
     <div class="footing_container">
@@ -251,5 +237,164 @@
         </div>
     </div>
 </div>
+<script>
+// Escape HTML special characters
+function escapeHTML(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Simple markdown converter for bold, code, and links
+function simpleMarkdown(text) {
+    if (!text) return '';
+
+    // Decode HTML entities
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = text;
+    text = textarea.value;
+
+    // Convert **bold** to <strong>bold</strong>
+    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // Convert `code` to <code>code</code>
+    text = text.replace(/`(.*?)`/g, '<code>$1</code>');
+
+    // Convert [text](url) to <a href="url" target="_blank" rel="noopener">text</a>
+    text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+    // Convert line breaks to <br>
+    text = text.replace(/\n/g, '<br>');
+
+    return text;
+}
+
+// Map change types to English labels
+const typeLabels = {
+    'added': 'Added',
+    'improvement': 'Improvement',
+    'fixed': 'Fixed',
+    'technical': 'Technical'
+};
+
+// Chinese labels to strip
+const chineseLabels = {
+    'added': '新增',
+    'improvement': '改进',
+    'fixed': '修复',
+    'technical': '技术'
+};
+
+// Load and display updates
+async function loadUpdates() {
+    const container = document.getElementById('updates-container');
+    if (!container) return;
+
+    try {
+        // List of update files (hardcoded for now, can be expanded)
+        const updateFiles = [
+            '../data/updates/2026-03-27.json'
+        ];
+
+        let allUpdates = [];
+
+        // Load each update file
+        for (const file of updateFiles) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) continue;
+                const update = await response.json();
+                update._filename = file; // Store filename for sorting
+                allUpdates.push(update);
+            } catch (err) {
+                console.error(`Error loading ${file}:`, err);
+            }
+        }
+
+        // Sort by date (newest first) - simple string sort for YYYY-MM-DD in filename
+        allUpdates.sort((a, b) => {
+            const dateA = a._filename.match(/\d{4}-\d{2}-\d{2}/);
+            const dateB = b._filename.match(/\d{4}-\d{2}-\d{2}/);
+            if (dateA && dateB) {
+                return dateB[0].localeCompare(dateA[0]);
+            }
+            return 0;
+        });
+
+        // Clear loading message
+        container.innerHTML = '';
+
+        // Render each update
+        allUpdates.forEach(update => {
+            const updateElement = document.createElement('div');
+            updateElement.className = 'changelog-section';
+
+            let html = `
+                <h2 class="changelog-date">${escapeHTML(update.date)} - ${escapeHTML(update.title)}</h2>
+                <div class="changelog-overview">
+                    <p><strong>Overview:</strong> ${escapeHTML(update.overview)}</p>
+                </div>
+            `;
+
+            // Render categories
+            if (update.categories && Array.isArray(update.categories)) {
+                update.categories.forEach(category => {
+                    html += `
+                        <div class="changelog-category">
+                            <h3 class="category-title">${escapeHTML(category.title)}</h3>
+                            <ul class="changes-list">
+                    `;
+
+                    if (category.changes && Array.isArray(category.changes)) {
+                        category.changes.forEach(change => {
+                            let changeText = '';
+                            if (change.type) {
+                                const chineseLabel = chineseLabels[change.type] || '';
+                                const displayLabel = typeLabels[change.type] || change.type;
+
+                                // Strip Chinese label if present
+                                let description = change.text;
+                                if (chineseLabel && description.includes(chineseLabel)) {
+                                    description = description.replace(chineseLabel, '').trim();
+                                }
+
+                                // Convert markdown
+                                description = simpleMarkdown(description);
+
+                                changeText = `<li><span class="${change.type}">${escapeHTML(displayLabel)}</span> ${description}</li>`;
+                            } else {
+                                // No type, just render text with markdown
+                                changeText = `<li>${simpleMarkdown(change.text)}</li>`;
+                            }
+                            html += changeText;
+                        });
+                    }
+
+                    html += `
+                            </ul>
+                        </div>
+                    `;
+                });
+            }
+
+            updateElement.innerHTML = html;
+            container.appendChild(updateElement);
+        });
+
+        // If no updates were loaded, show message
+        if (allUpdates.length === 0) {
+            container.innerHTML = '<p class="no-updates">No updates found.</p>';
+        }
+
+    } catch (error) {
+        console.error('Error loading updates:', error);
+        container.innerHTML = '<p class="error">Error loading updates. Please check the console.</p>';
+    }
+}
+
+// Load updates when page loads
+document.addEventListener('DOMContentLoaded', loadUpdates);
+</script>
 </body>
 </html>

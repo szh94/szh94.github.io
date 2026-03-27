@@ -1,10 +1,10 @@
 {
   "date": "March 27, 2026",
   "title": "Complete Website Redesign",
-  "overview": "概述：对网站进行了全面的现代化改造，包括视觉设计、响应式布局和用户体验的全面提升。",
+  "overview": "Complete modernization of the website, including visual design, responsive layout, and overall improvement of user experience.",
   "categories": [
     {
-      "title": "HTML 改进",
+      "title": "HTML Improvements",
       "changes": [
         {"type": "added", "text": "新增 响应式视口元标签，支持移动设备"},
         {"type": "added", "text": "新增 页面描述元标签，提升SEO"},
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "title": "CSS 重新设计",
+      "title": "CSS Redesign",
       "changes": [
         {"type": "added", "text": "新增 现代CSS重置和盒模型设置"},
         {"type": "added", "text": "新增 平滑滚动效果"},
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "title": "视觉增强",
+      "title": "Visual Enhancements",
       "changes": [
         {"type": "improvement", "text": "改进 专业配色方案和渐变效果"},
         {"type": "improvement", "text": "改进 一致的间距和排版系统"},
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "title": "技术改进",
+      "title": "Technical Improvements",
       "changes": [
         {"type": "technical", "text": "技术 使用现代CSS特性（Grid、Flexbox、CSS变量）"},
         {"type": "technical", "text": "技术 硬件加速的动画优化"},
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "title": "修改的文件",
+      "title": "Modified Files",
       "changes": [
         {"text": "`index.html` - 主页结构和元数据"},
         {"text": "`css/General_Setting.css` - 全局样式和布局"},
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "title": "后续步骤",
+      "title": "Next Steps",
       "changes": [
         {"text": "将类似的现代设计模式应用到其他页面"},
         {"text": "更新 `review.html` 页面设计"},
