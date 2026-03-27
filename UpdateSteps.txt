@@ -1,16 +1,12 @@
-##
-single_update_steps为Ubuntu端执行文件
-##windows端
-进入blog文件夹F:\Git\myblog\shenzhihao.github.io，右键git bash here
-
-##多人合作
+## single_update_steps
+## check
 git status
 git pull
 git add .
 git commit -m 'Notations'
 git push origin master
 
-##单人
+## commit all changes and push to remote repo
 git add .
 git commit -m 'Notations'
 git push -u origin master
