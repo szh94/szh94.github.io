@@ -72,10 +72,9 @@
       "changes": [
         {"text": "将类似的现代设计模式应用到其他页面"},
         {"text": "更新 `review.html` 页面设计"},
-        {"text": "更新 `My_Research.html` 页面设计"},
-        {"text": "更新 `My_Creation.html` 页面设计"},
-        {"text": "更新 `Sorting.html` 页面设计"},
-        {"text": "更新 `CFD.html` 页面设计"}
+        {"text": "更新 `myResearch.html` 页面设计"},
+        {"text": "更新 `myCreation.html` 页面设计"},
+        {"text": "更新 `cfd.html` 页面设计"}
       ]
     }
   ]
