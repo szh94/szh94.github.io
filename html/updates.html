@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website updates and changelog - Shen Zhihao's Research Notes">
+    <title>Updates - Shen Zhihao</title>
+    <link rel="stylesheet" type="text/css" href="../css/General_Setting.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <style>
+        .updates-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 1000px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .updates-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+        }
+
+        .updates-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .updates-subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .changelog-section {
+            margin-bottom: 40px;
+        }
+
+        .changelog-date {
+            font-size: 1.5rem;
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .changelog-overview {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid #3498db;
+        }
+
+        .changelog-category {
+            margin-bottom: 25px;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .category-title::before {
+            content: '▶';
+            color: #3498db;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .changes-list {
+            list-style-type: none;
+            padding-left: 25px;
+        }
+
+        .changes-list li {
+            margin-bottom: 12px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .changes-list li::before {
+            content: '•';
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+            font-size: 1.2rem;
+        }
+
+        .improvement {
+            color: #27ae60;
+            font-weight: 500;
+        }
+
+        .added {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .fixed {
+            color: #e74c3c;
+            font-weight: 500;
+        }
+
+        .technical {
+            color: #9b59b6;
+            font-weight: 500;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .back-to-home:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .updates-page {
+            display: block !important;
+            grid-template-columns: none !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            .updates-content {
+                padding: 25px;
+                margin: 10px;
+            }
+
+            .updates-title {
+                font-size: 2rem;
+            }
+
+            .changelog-date {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <div class="head_container">
+        <ul class="index">
+            <li class="index_li">
+                <a class="link" href="../index.html">首页</a>
+            </li>
+            <li class="index_li">
+                <a class="link" href="review.html">往期</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <div class="top_container">
+        <p class="blog_name">更 新 日 志</p>
+    </div>
+</div>
+<div class="body">
+    <div class="body_left">
+        <div class="Tags">
+            <p class="Tag_name">目 录</p>
+            <a class="Tag_link" href="My_Research.html">研究</a>
+            <br/>
+            <a class="Tag_link" href="My_Creation.html">个人创作</a>
+            <br/>
+            <a class="Tag_link" href="../index.html">返回首页</a>
+        </div>
+    </div>
+    <div class="body_right updates-page">
+        <div class="updates-content">
+            <div class="updates-header">
+                <h1 class="updates-title">网站更新日志</h1>
+                <p class="updates-subtitle">记录网站的重大改进和功能更新</p>
+            </div>
+
+            <div class="changelog-section">
+                <h2 class="changelog-date">2026年3月27日 - 网站全面重新设计</h2>
+
+                <div class="changelog-overview">
+                    <p><strong>概述：</strong>对网站进行了全面的现代化改造，包括视觉设计、响应式布局和用户体验的全面提升。</p>
+                </div>
+
+                <div class="changelog-category">
+                    <h3 class="category-title">HTML 改进</h3>
+                    <ul class="changes-list">
+                        <li><span class="added">新增</span> 响应式视口元标签，支持移动设备</li>
+                        <li><span class="added">新增</span> 页面描述元标签，提升SEO</li>
+                        <li><span class="improvement">改进</span> 更新页面标题为"Shen Zhihao - Research Notes"</li>
+                        <li><span class="fixed">修复</span> QR代码图片属性语法</li>
+                        <li><span class="improvement">改进</span> 移除不必要的&lt;br/&gt;标签</li>
+                    </ul>
+                </div>
+
+                <div class="changelog-category">
+                    <h3 class="category-title">CSS 重新设计</h3>
+                    <ul class="changes-list">
+                        <li><span class="added">新增</span> 现代CSS重置和盒模型设置</li>
+                        <li><span class="added">新增</span> 平滑滚动效果</li>
+                        <li><span class="added">新增</span> 渐变背景替换固定背景图片</li>
+                        <li><span class="added">新增</span> 粘性导航栏和毛玻璃效果</li>
+                        <li><span class="added">新增</span> 动画下划线悬停效果</li>
+                        <li><span class="added">新增</span> 渐变标题背景和文字阴影</li>
+                        <li><span class="added">新增</span> 响应式媒体查询，支持所有屏幕尺寸</li>
+                        <li><span class="added">新增</span> Flexbox/Grid布局系统替换旧的浮动布局</li>
+                        <li><span class="added">新增</span> 交错淡入动画效果</li>
+                        <li><span class="added">新增</span> 现代卡片设计和悬停动画</li>
+                        <li><span class="added">新增</span> 侧边栏悬停效果和平滑过渡</li>
+                    </ul>
+                </div>
+
+                <div class="changelog-category">
+                    <h3 class="category-title">视觉增强</h3>
+                    <ul class="changes-list">
+                        <li><span class="improvement">改进</span> 专业配色方案和渐变效果</li>
+                        <li><span class="improvement">改进</span> 一致的间距和排版系统</li>
+                        <li><span class="added">新增</span> 所有交互元素的悬停效果</li>
+                        <li><span class="added">新增</span> 平滑过渡动画（0.3-0.5秒时长）</li>
+                        <li><span class="added">新增</span> 交错淡入内容动画</li>
+                        <li><span class="improvement">改进</span> 完全自适应响应式布局</li>
+                        <li><span class="improvement">改进</span> 移动优先设计方法</li>
+                        <li><span class="improvement">改进</span> 触控友好的界面</li>
+                    </ul>
+                </div>
+
+                <div class="changelog-category">
+                    <h3 class="category-title">技术改进</h3>
+                    <ul class="changes-list">
+                        <li><span class="technical">技术</span> 使用现代CSS特性（Grid、Flexbox、CSS变量）</li>
+                        <li><span class="technical">技术</span> 硬件加速的动画优化</li>
+                        <li><span class="technical">技术</span> 优化的图片渲染（object-fit）</li>
+                        <li><span class="technical">技术</span> 高效的CSS选择器</li>
+                        <li><span class="technical">技术</span> 适当的语义HTML结构</li>
+                        <li><span class="technical">技术</span> 足够的颜色对比度</li>
+                        <li><span class="technical">技术</span> 键盘可导航的界面</li>
+                        <li><span class="technical">技术</span> 清洁、有组织的代码结构</li>
+                        <li><span class="technical">技术</span> 一致的命名规范</li>
+                        <li><span class="technical">技术</span> 全面的代码注释</li>
+                    </ul>
+                </div>
+
+                <div class="changelog-category">
+                    <h3 class="category-title">修改的文件</h3>
+                    <ul class="changes-list">
+                        <li><code>index.html</code> - 主页结构和元数据</li>
+                        <li><code>css/General_Setting.css</code> - 全局样式和布局</li>
+                        <li><code>css/index.css</code> - 首页特定样式</li>
+                        <li><code>CHANGELOG.md</code> - 更新日志文档</li>
+                        <li><code>html/updates.html</code> - 更新日志页面</li>
+                    </ul>
+                </div>
+
+                <div class="changelog-category">
+                    <h3 class="category-title">后续步骤</h3>
+                    <ul class="changes-list">
+                        <li>将类似的现代设计模式应用到其他页面</li>
+                        <li>更新 <code>review.html</code> 页面设计</li>
+                        <li>更新 <code>My_Research.html</code> 页面设计</li>
+                        <li>更新 <code>My_Creation.html</code> 页面设计</li>
+                        <li>更新 <code>Sorting.html</code> 页面设计</li>
+                        <li>更新 <code>CFD.html</code> 页面设计</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="../index.html" class="back-to-home">返回首页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footing">
+    <div class="footing_container">
+        <div class="footing_message" align="center">
+            <img id="QR_Code" src="../img/My_QR_Code.png" alt="QR Code" width="55" height="55">
+        </div>
+        <div class="copyright">
+            <p>Copyright©2017 shenzhihao.com. All rights reserved.</p>
+            <p style="font-size: 12px; opacity: 0.8;">Redesigned March 2026 • <a href="../CHANGELOG.md" style="color: rgba(255,255,255,0.9);">View raw changelog</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
