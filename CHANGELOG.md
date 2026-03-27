@@ -1,5 +1,36 @@
 # Website Redesign Changelog
 
+## March 27, 2026 - Dynamic Updates System
+
+### Overview
+Implemented a folder-based updates system that stores each update as a separate JSON file in `_data/updates/`. The updates page now automatically loads and displays all updates in reverse chronological order.
+
+### Changes Made
+- Created `_data/updates/` folder with JSON schema
+- Modified `html/updates.html` to use Jekyll data files and Liquid templates
+- Added front matter to enable Jekyll processing
+- Created template with responsive design and proper styling
+- Updated existing update to JSON format (`2026-03-27.json`)
+- Added documentation (`_data/updates/README.md`)
+
+### Technical Details
+- Updates are stored as JSON files with date, title, overview, and categorized changes
+- Liquid template handles sorting, type mapping, and Markdown rendering
+- No need to edit HTML when adding new updates—just add a JSON file
+- Maintains existing visual design and responsive layout
+
+### Files Modified
+- `html/updates.html` - Added front matter and Liquid template
+- `_data/updates/2026-03-27.json` - Converted existing update to JSON
+- `_data/updates/README.md` - Documentation
+- `CHANGELOG.md` - This entry
+
+### Impact
+- Simplified update process: just add a JSON file
+- Maintainable and scalable system
+- No duplication of HTML code
+- Preserves all existing styling and animations
+
 ## March 27, 2026 - Major Redesign
 
 ### Overview
@@ -127,3 +158,26 @@ Consider applying similar modern design patterns to other pages:
 - `CFD.html`
 
 This redesign establishes a solid foundation for future improvements and ensures the website remains visually appealing and functional across all devices.
+
+## March 27, 2026 - Content Translation to English
+
+### Overview
+Translation of all Chinese text on the main page to English for broader accessibility.
+
+### Changes Made
+- **Navigation**: Translated "首页" to "The Beginning" and "往期" to "Previous"
+- **Header**: Updated blog name to "Hello Guys"
+- **Sidebar**: Translated "目 录" to "Contents", "研究" to "Research", "个人创作" to "Personal Creations", "更新日志" to "Update Log"
+- **Article Titles**:
+  - "几种排序算法图解" → "Several Sorting Algorithms Illustrated"
+  - "离散元DEM模拟" → "Discrete Element Method (DEM) Simulation"
+  - "流固耦合CFDEM模拟" → "Fluid-Solid Coupling CFDEM Simulation"
+  - "计算流体力学CFD模拟" → "Computational Fluid Dynamics (CFD) Simulation"
+
+### Files Modified
+- `index.html` - Updated all Chinese text to English equivalents
+
+### Impact
+- Improved accessibility for international visitors
+- Consistent English interface throughout main page
+- Maintained technical accuracy in translated terminology

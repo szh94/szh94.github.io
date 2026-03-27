@@ -3,8 +3,6 @@
 到case文件夹，运行
 foamCloneCase
 
-
-
 ×××
 并行计算
 先使用blockMesh(topoSet,snappyHexMesh)等工具划分好网格，再运行

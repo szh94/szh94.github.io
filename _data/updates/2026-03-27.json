@@ -1,0 +1,82 @@
+{
+  "date": "March 27, 2026",
+  "title": "Complete Website Redesign",
+  "overview": "概述：对网站进行了全面的现代化改造，包括视觉设计、响应式布局和用户体验的全面提升。",
+  "categories": [
+    {
+      "title": "HTML 改进",
+      "changes": [
+        {"type": "added", "text": "新增 响应式视口元标签，支持移动设备"},
+        {"type": "added", "text": "新增 页面描述元标签，提升SEO"},
+        {"type": "improvement", "text": "改进 更新页面标题为\"Shen Zhihao - Research Notes\""},
+        {"type": "fixed", "text": "修复 QR代码图片属性语法"},
+        {"type": "improvement", "text": "改进 移除不必要的&lt;br/&gt;标签"}
+      ]
+    },
+    {
+      "title": "CSS 重新设计",
+      "changes": [
+        {"type": "added", "text": "新增 现代CSS重置和盒模型设置"},
+        {"type": "added", "text": "新增 平滑滚动效果"},
+        {"type": "added", "text": "新增 渐变背景替换固定背景图片"},
+        {"type": "added", "text": "新增 粘性导航栏和毛玻璃效果"},
+        {"type": "added", "text": "新增 动画下划线悬停效果"},
+        {"type": "added", "text": "新增 渐变标题背景和文字阴影"},
+        {"type": "added", "text": "新增 响应式媒体查询，支持所有屏幕尺寸"},
+        {"type": "added", "text": "新增 Flexbox/Grid布局系统替换旧的浮动布局"},
+        {"type": "added", "text": "新增 交错淡入动画效果"},
+        {"type": "added", "text": "新增 现代卡片设计和悬停动画"},
+        {"type": "added", "text": "新增 侧边栏悬停效果和平滑过渡"}
+      ]
+    },
+    {
+      "title": "视觉增强",
+      "changes": [
+        {"type": "improvement", "text": "改进 专业配色方案和渐变效果"},
+        {"type": "improvement", "text": "改进 一致的间距和排版系统"},
+        {"type": "added", "text": "新增 所有交互元素的悬停效果"},
+        {"type": "added", "text": "新增 平滑过渡动画（0.3-0.5秒时长）"},
+        {"type": "added", "text": "新增 交错淡入内容动画"},
+        {"type": "improvement", "text": "改进 完全自适应响应式布局"},
+        {"type": "improvement", "text": "改进 移动优先设计方法"},
+        {"type": "improvement", "text": "改进 触控友好的界面"}
+      ]
+    },
+    {
+      "title": "技术改进",
+      "changes": [
+        {"type": "technical", "text": "技术 使用现代CSS特性（Grid、Flexbox、CSS变量）"},
+        {"type": "technical", "text": "技术 硬件加速的动画优化"},
+        {"type": "technical", "text": "技术 优化的图片渲染（object-fit）"},
+        {"type": "technical", "text": "技术 高效的CSS选择器"},
+        {"type": "technical", "text": "技术 适当的语义HTML结构"},
+        {"type": "technical", "text": "技术 足够的颜色对比度"},
+        {"type": "technical", "text": "技术 键盘可导航的界面"},
+        {"type": "technical", "text": "技术 清洁、有组织的代码结构"},
+        {"type": "technical", "text": "技术 一致的命名规范"},
+        {"type": "technical", "text": "技术 全面的代码注释"}
+      ]
+    },
+    {
+      "title": "修改的文件",
+      "changes": [
+        {"text": "`index.html` - 主页结构和元数据"},
+        {"text": "`css/General_Setting.css` - 全局样式和布局"},
+        {"text": "`css/index.css` - 首页特定样式"},
+        {"text": "`CHANGELOG.md` - 更新日志文档"},
+        {"text": "`html/updates.html` - 更新日志页面"}
+      ]
+    },
+    {
+      "title": "后续步骤",
+      "changes": [
+        {"text": "将类似的现代设计模式应用到其他页面"},
+        {"text": "更新 `review.html` 页面设计"},
+        {"text": "更新 `My_Research.html` 页面设计"},
+        {"text": "更新 `My_Creation.html` 页面设计"},
+        {"text": "更新 `Sorting.html` 页面设计"},
+        {"text": "更新 `CFD.html` 页面设计"}
+      ]
+    }
+  ]
+}
