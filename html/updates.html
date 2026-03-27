@@ -212,15 +212,106 @@
             </div>
 
 <div id="updates-container">
-            <!-- Updates will be loaded by JavaScript -->
-            <div class="loading">Loading updates...</div>
-            <noscript>
-                <div class="error">
-                    <p>JavaScript is required to load updates. Please enable JavaScript to view the update log.</p>
-                    <p>Alternatively, you can view the raw update files in the <code>data/updates/</code> directory.</p>
-                </div>
-            </noscript>
+    <!-- Static update for March 27, 2026 -->
+    <div class="changelog-section" data-update-filename="2026-03-27.json">
+        <h2 class="changelog-date">March 27, 2026 - Complete Website Redesign</h2>
+        <div class="changelog-overview">
+            <p><strong>Overview:</strong> Complete modernization of the website, including visual design, responsive layout, and overall improvement of user experience.</p>
         </div>
+
+        <div class="changelog-category">
+            <h3 class="category-title">HTML Improvements</h3>
+            <ul class="changes-list">
+                <li><span class="added">Added</span> 响应式视口元标签，支持移动设备</li>
+                <li><span class="added">Added</span> 页面描述元标签，提升SEO</li>
+                <li><span class="improvement">Improvement</span> 更新页面标题为"Shen Zhihao - Research Notes"</li>
+                <li><span class="fixed">Fixed</span> QR代码图片属性语法</li>
+                <li><span class="improvement">Improvement</span> 移除不必要的&lt;br/&gt;标签</li>
+            </ul>
+        </div>
+
+        <div class="changelog-category">
+            <h3 class="category-title">CSS Redesign</h3>
+            <ul class="changes-list">
+                <li><span class="added">Added</span> 现代CSS重置和盒模型设置</li>
+                <li><span class="added">Added</span> 平滑滚动效果</li>
+                <li><span class="added">Added</span> 渐变背景替换固定背景图片</li>
+                <li><span class="added">Added</span> 粘性导航栏和毛玻璃效果</li>
+                <li><span class="added">Added</span> 动画下划线悬停效果</li>
+                <li><span class="added">Added</span> 渐变标题背景和文字阴影</li>
+                <li><span class="added">Added</span> 响应式媒体查询，支持所有屏幕尺寸</li>
+                <li><span class="added">Added</span> Flexbox/Grid布局系统替换旧的浮动布局</li>
+                <li><span class="added">Added</span> 交错淡入动画效果</li>
+                <li><span class="added">Added</span> 现代卡片设计和悬停动画</li>
+                <li><span class="added">Added</span> 侧边栏悬停效果和平滑过渡</li>
+            </ul>
+        </div>
+
+        <div class="changelog-category">
+            <h3 class="category-title">Visual Enhancements</h3>
+            <ul class="changes-list">
+                <li><span class="improvement">Improvement</span> 专业配色方案和渐变效果</li>
+                <li><span class="improvement">Improvement</span> 一致的间距和排版系统</li>
+                <li><span class="added">Added</span> 所有交互元素的悬停效果</li>
+                <li><span class="added">Added</span> 平滑过渡动画（0.3-0.5秒时长）</li>
+                <li><span class="added">Added</span> 交错淡入内容动画</li>
+                <li><span class="improvement">Improvement</span> 完全自适应响应式布局</li>
+                <li><span class="improvement">Improvement</span> 移动优先设计方法</li>
+                <li><span class="improvement">Improvement</span> 触控友好的界面</li>
+            </ul>
+        </div>
+
+        <div class="changelog-category">
+            <h3 class="category-title">Technical Improvements</h3>
+            <ul class="changes-list">
+                <li><span class="technical">Technical</span> 使用现代CSS特性（Grid、Flexbox、CSS变量）</li>
+                <li><span class="technical">Technical</span> 硬件加速的动画优化</li>
+                <li><span class="technical">Technical</span> 优化的图片渲染（object-fit）</li>
+                <li><span class="technical">Technical</span> 高效的CSS选择器</li>
+                <li><span class="technical">Technical</span> 适当的语义HTML结构</li>
+                <li><span class="technical">Technical</span> 足够的颜色对比度</li>
+                <li><span class="technical">Technical</span> 键盘可导航的界面</li>
+                <li><span class="technical">Technical</span> 清洁、有组织的代码结构</li>
+                <li><span class="technical">Technical</span> 一致的命名规范</li>
+                <li><span class="technical">Technical</span> 全面的代码注释</li>
+            </ul>
+        </div>
+
+        <div class="changelog-category">
+            <h3 class="category-title">Modified Files</h3>
+            <ul class="changes-list">
+                <li><code>index.html</code> - 主页结构和元数据</li>
+                <li><code>css/General_Setting.css</code> - 全局样式和布局</li>
+                <li><code>css/index.css</code> - 首页特定样式</li>
+                <li><code>CHANGELOG.md</code> - 更新日志文档</li>
+                <li><code>html/updates.html</code> - 更新日志页面</li>
+            </ul>
+        </div>
+
+        <div class="changelog-category">
+            <h3 class="category-title">Next Steps</h3>
+            <ul class="changes-list">
+                <li>将类似的现代设计模式应用到其他页面</li>
+                <li>更新 <code>review.html</code> 页面设计</li>
+                <li>更新 <code>My_Research.html</code> 页面设计</li>
+                <li>更新 <code>My_Creation.html</code> 页面设计</li>
+                <li>更新 <code>Sorting.html</code> 页面设计</li>
+                <li>更新 <code>CFD.html</code> 页面设计</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Dynamic updates will be loaded here by JavaScript -->
+    <div id="dynamic-updates-container"></div>
+
+    <noscript>
+        <div class="error">
+            <p>JavaScript is required to load future updates. Please enable JavaScript to view the latest update log.</p>
+            <p>Alternatively, you can view the raw update files in the <code>data/updates/</code> directory.</p>
+        </div>
+    </noscript>
+</div>
             <div style="text-align: center;">
                 <a href="../index.html" class="back-to-home">Back to Home</a>
             </div>
@@ -238,7 +329,124 @@
     </div>
 </div>
 <script>
-// Escape HTML special characters
+// Simplified script for loading future updates only
+// This loads updates that are not already present as static content
+async function loadFutureUpdates() {
+    const container = document.getElementById('dynamic-updates-container');
+    if (!container) return;
+
+    // List of update files to load (excluding already statically rendered ones)
+    const updateFiles = [
+        // Add future update files here, e.g.:
+        // '../data/updates/2026-03-28.json',
+    ];
+
+    // Get already rendered update filenames from data attributes
+    const existingUpdates = new Set();
+    document.querySelectorAll('[data-update-filename]').forEach(el => {
+        existingUpdates.add(el.getAttribute('data-update-filename'));
+    });
+
+    let newUpdates = [];
+
+    // Load each update file
+    for (const file of updateFiles) {
+        const filename = file.split('/').pop();
+        if (existingUpdates.has(filename)) {
+            continue; // Skip already rendered updates
+        }
+
+        try {
+            const response = await fetch(file);
+            if (!response.ok) continue;
+            const update = await response.json();
+            update._filename = file;
+            newUpdates.push(update);
+        } catch (err) {
+            console.error(`Error loading ${file}:`, err);
+        }
+    }
+
+    // Sort by date (newest first)
+    newUpdates.sort((a, b) => {
+        const dateA = a._filename.match(/\d{4}-\d{2}-\d{2}/);
+        const dateB = b._filename.match(/\d{4}-\d{2}-\d{2}/);
+        if (dateA && dateB) {
+            return dateB[0].localeCompare(dateA[0]);
+        }
+        return 0;
+    });
+
+    // Render new updates
+    newUpdates.forEach(update => {
+        const updateElement = document.createElement('div');
+        updateElement.className = 'changelog-section';
+        updateElement.setAttribute('data-update-filename', update._filename.split('/').pop());
+
+        let html = `
+            <h2 class="changelog-date">${escapeHTML(update.date)} - ${escapeHTML(update.title)}</h2>
+            <div class="changelog-overview">
+                <p><strong>Overview:</strong> ${escapeHTML(update.overview)}</p>
+            </div>
+        `;
+
+        if (update.categories && Array.isArray(update.categories)) {
+            update.categories.forEach(category => {
+                html += `
+                    <div class="changelog-category">
+                        <h3 class="category-title">${escapeHTML(category.title)}</h3>
+                        <ul class="changes-list">
+                `;
+
+                if (category.changes && Array.isArray(category.changes)) {
+                    category.changes.forEach(change => {
+                        let changeText = '';
+                        if (change.type) {
+                            const chineseLabels = { 'added': '新增', 'improvement': '改进', 'fixed': '修复', 'technical': '技术' };
+                            const typeLabels = { 'added': 'Added', 'improvement': 'Improvement', 'fixed': 'Fixed', 'technical': 'Technical' };
+                            const chineseLabel = chineseLabels[change.type] || '';
+                            const displayLabel = typeLabels[change.type] || change.type;
+
+                            let description = change.text;
+                            if (chineseLabel && description.includes(chineseLabel)) {
+                                description = description.replace(chineseLabel, '').trim();
+                            }
+
+                            // Simple markdown conversion
+                            description = description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                                   .replace(/`(.*?)`/g, '<code>$1</code>')
+                                                   .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+                            changeText = `<li><span class="${change.type}">${escapeHTML(displayLabel)}</span> ${description}</li>`;
+                        } else {
+                            let text = change.text;
+                            text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                       .replace(/`(.*?)`/g, '<code>$1</code>')
+                                       .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+                            changeText = `<li>${text}</li>`;
+                        }
+                        html += changeText;
+                    });
+                }
+
+                html += `
+                        </ul>
+                    </div>
+                `;
+            });
+        }
+
+        updateElement.innerHTML = html;
+        container.appendChild(updateElement);
+    });
+
+    // Hide container if no new updates
+    if (newUpdates.length === 0) {
+        container.style.display = 'none';
+    }
+}
+
+// Helper function from earlier (needed for escaping)
 function escapeHTML(text) {
     if (!text) return '';
     const div = document.createElement('div');
@@ -246,155 +454,8 @@ function escapeHTML(text) {
     return div.innerHTML;
 }
 
-// Simple markdown converter for bold, code, and links
-function simpleMarkdown(text) {
-    if (!text) return '';
-
-    // Decode HTML entities
-    const textarea = document.createElement('textarea');
-    textarea.innerHTML = text;
-    text = textarea.value;
-
-    // Convert **bold** to <strong>bold</strong>
-    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-
-    // Convert `code` to <code>code</code>
-    text = text.replace(/`(.*?)`/g, '<code>$1</code>');
-
-    // Convert [text](url) to <a href="url" target="_blank" rel="noopener">text</a>
-    text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-
-    // Convert line breaks to <br>
-    text = text.replace(/\n/g, '<br>');
-
-    return text;
-}
-
-// Map change types to English labels
-const typeLabels = {
-    'added': 'Added',
-    'improvement': 'Improvement',
-    'fixed': 'Fixed',
-    'technical': 'Technical'
-};
-
-// Chinese labels to strip
-const chineseLabels = {
-    'added': '新增',
-    'improvement': '改进',
-    'fixed': '修复',
-    'technical': '技术'
-};
-
-// Load and display updates
-async function loadUpdates() {
-    const container = document.getElementById('updates-container');
-    if (!container) return;
-
-    try {
-        // List of update files (hardcoded for now, can be expanded)
-        const updateFiles = [
-            '../data/updates/2026-03-27.json'
-        ];
-
-        let allUpdates = [];
-
-        // Load each update file
-        for (const file of updateFiles) {
-            try {
-                const response = await fetch(file);
-                if (!response.ok) continue;
-                const update = await response.json();
-                update._filename = file; // Store filename for sorting
-                allUpdates.push(update);
-            } catch (err) {
-                console.error(`Error loading ${file}:`, err);
-            }
-        }
-
-        // Sort by date (newest first) - simple string sort for YYYY-MM-DD in filename
-        allUpdates.sort((a, b) => {
-            const dateA = a._filename.match(/\d{4}-\d{2}-\d{2}/);
-            const dateB = b._filename.match(/\d{4}-\d{2}-\d{2}/);
-            if (dateA && dateB) {
-                return dateB[0].localeCompare(dateA[0]);
-            }
-            return 0;
-        });
-
-        // Clear loading message
-        container.innerHTML = '';
-
-        // Render each update
-        allUpdates.forEach(update => {
-            const updateElement = document.createElement('div');
-            updateElement.className = 'changelog-section';
-
-            let html = `
-                <h2 class="changelog-date">${escapeHTML(update.date)} - ${escapeHTML(update.title)}</h2>
-                <div class="changelog-overview">
-                    <p><strong>Overview:</strong> ${escapeHTML(update.overview)}</p>
-                </div>
-            `;
-
-            // Render categories
-            if (update.categories && Array.isArray(update.categories)) {
-                update.categories.forEach(category => {
-                    html += `
-                        <div class="changelog-category">
-                            <h3 class="category-title">${escapeHTML(category.title)}</h3>
-                            <ul class="changes-list">
-                    `;
-
-                    if (category.changes && Array.isArray(category.changes)) {
-                        category.changes.forEach(change => {
-                            let changeText = '';
-                            if (change.type) {
-                                const chineseLabel = chineseLabels[change.type] || '';
-                                const displayLabel = typeLabels[change.type] || change.type;
-
-                                // Strip Chinese label if present
-                                let description = change.text;
-                                if (chineseLabel && description.includes(chineseLabel)) {
-                                    description = description.replace(chineseLabel, '').trim();
-                                }
-
-                                // Convert markdown
-                                description = simpleMarkdown(description);
-
-                                changeText = `<li><span class="${change.type}">${escapeHTML(displayLabel)}</span> ${description}</li>`;
-                            } else {
-                                // No type, just render text with markdown
-                                changeText = `<li>${simpleMarkdown(change.text)}</li>`;
-                            }
-                            html += changeText;
-                        });
-                    }
-
-                    html += `
-                            </ul>
-                        </div>
-                    `;
-                });
-            }
-
-            updateElement.innerHTML = html;
-            container.appendChild(updateElement);
-        });
-
-        // If no updates were loaded, show message
-        if (allUpdates.length === 0) {
-            container.innerHTML = '<p class="no-updates">No updates found.</p>';
-        }
-
-    } catch (error) {
-        console.error('Error loading updates:', error);
-        container.innerHTML = '<p class="error">Error loading updates. Please check the console.</p>';
-    }
-}
-
-// Load updates when page loads
-document.addEventListener('DOMContentLoaded', loadUpdates);
+// Load future updates when page loads
+document.addEventListener('DOMContentLoaded', loadFutureUpdates);
 </script>
 </body>
 </html>
