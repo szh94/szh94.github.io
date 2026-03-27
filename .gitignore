@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Claude Code memory files
+.claude/
