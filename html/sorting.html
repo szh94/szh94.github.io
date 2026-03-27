@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive sorting algorithm visualizations - Shen Zhihao's Research Notes">
+    <title>Sorting Algorithms - Shen Zhihao</title>
+    <link rel="stylesheet" type="text/css" href="../css/General_Setting.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/Sorting.css">
+    <script src="../js/Sorting.js"></script>
+</head>
+<body>
+<div class="head">
+    <div class="head_container">
+        <ul class="index">
+            <li class="index_li">
+                <a class="link" href="../index.html">The Beginning</a>
+            </li>
+            <li class="index_li">
+                <a class="link" href="review.html">Previous</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="top">
+    <div class="top_container">
+        <p class="blog_name">Sorting Algorithms</p>
+    </div>
+</div>
+<div class="body">
+    <div class="body_left">
+        <div class="Tags">
+            <p class="Tag_name">Contents</p>
+            <a class="Tag_link" href="My_Research.html">Research</a>
+            <br/>
+            <a class="Tag_link" href="CFD.html">Computational Fluid Dynamics</a>
+            <br/>
+            <a class="Tag_link" href="My_Creation.html">Personal Creations</a>
+            <br/>
+            <a class="Tag_link" href="../index.html">Back to Home</a>
+        </div>
+    </div>
+    <div class="body_right">
+        <div class="sorting-content">
+            <h2 class="sorting-title">Sorting Algorithm Visualizations</h2>
+            <p class="sorting-intro">Learning sorting algorithms is a crucial part of data structures and algorithms education, involving optimization problems that balance computational space and time requirements. The diagram below shows a comparative analysis of several common algorithms:</p>
+
+            <div class="sorting-image">
+                <img class="img1" src="../img/Sorting/sort.jpg" alt="Sorting Algorithm Comparison">
+            </div>
+
+            <div class="sorting-section">
+                <h3 class="sorting-section-title">1. Select Sorting Algorithm for Demonstration</h3>
+                <p class="p1">Choose one of three sorting algorithms to visualize:</p>
+                <form class="form1">
+                    Bubble Sort<input type="radio" name="sort_mt" value="1" checked="true"><br/>
+                    Selection Sort<input type="radio" name="sort_mt" value="2"><br/>
+                    Insertion Sort<input type="radio" name="sort_mt" value="3"><br/>
+                </form>
+                <button class="submit" onclick="get_sort_mt()">Confirm</button>
+                <p class="p1">Selected sorting algorithm:</p>
+                <p class="p2" id="selected_sort_mt">Bubble Sort</p>
+            </div>
+
+            <div class="sorting-section">
+                <h3 class="sorting-section-title">2. Select Data Input Method</h3>
+                <p class="p1">(For optimal animation display, keep data count under 20 and values under 100):</p>
+                <form class="form2">
+                    Enter data count<input type="radio" name="input_mt" value="1" checked="true">
+                    <br/>Enter data individually<input type="radio" name="input_mt" value="2">
+                </form>
+                <button class="submit" onclick="get_input_mt()">Confirm</button>
+                <p class="p1">Selected input method:</p>
+                <p class="p2" id="selected_input_mt">Enter data count</p>
+            </div>
+
+            <div class="sorting-section">
+                <h3 class="sorting-section-title">3. Data Input</h3>
+                <p class="p1">
+                    <strong>Example 1: Enter data count</strong><br/>
+                    20 → Add → Play (automatically generates an unordered sequence of 20 positive integers)<br/>
+                    <strong>Example 2: Enter data individually</strong><br/>
+                    15 → Add → 12 → Add → ... → Play<br/>
+                    <strong>Example 3: Backspace</strong><br/>
+                    Individual input: Backspace deletes the last entered number<br/>
+                    Data count input: Backspace resets the data count
+                </p>
+
+                <p id="date_display">Data Input Box</p>
+
+                <div class="computer">
+                    <button class="key_num" onclick="add_num('1')">1</button>
+                    <button class="key_num" onclick="add_num('2')">2</button>
+                    <button class="key_num" onclick="add_num('3')">3</button>
+                    <button class="key_num" onclick="add_num('4')">4</button>
+                    <button class="key_num" onclick="add_num('5')">5</button>
+                    <button class="key_num" onclick="add_num('6')">6</button>
+                    <button class="key_num" onclick="add_num('7')">7</button>
+                    <button class="key_num" onclick="add_num('8')">8</button>
+                    <button class="key_num" onclick="add_num('9')">9</button>
+                    <button class="key_num" onclick="add_num('0')">0</button>
+                    <button class="key_num" onclick="add_to_list()">Add</button>
+                    <button class="key_num" onclick="delete_last_input()">Backspace</button>
+                    <button class="key_num_l" onclick="perform_status_check()">Check/Update</button>
+                </div>
+
+                <div id="data_displayer">
+                    <p class="p2" id="inputted_data">Entered Data</p>
+                </div>
+
+                <p class="p2" id="perform_status">Demonstration Status</p>
+
+                <button class="submit" onclick="perform_start()">Play</button>
+                <button class="submit" onclick="perform_pause()">Pause</button>
+
+                <div id="ani"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .sorting-content {
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 1000px;
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    .sorting-title {
+        font-size: 2.2rem;
+        color: #2c3e50;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: 'Georgia', serif;
+    }
+
+    .sorting-intro {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    .sorting-image {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .sorting-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .sorting-section {
+        margin-bottom: 40px;
+        padding: 25px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #3498db;
+    }
+
+    .sorting-section-title {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .sorting-page {
+        display: block !important;
+        grid-template-columns: none !important;
+    }
+</style>
+<div class="footing">
+    <div class="footing_container">
+        <div class="footing_message" align="center">
+            <img id="QR_Code" src="../img/My_QR_Code.png" alt="QR Code" width="55" height="55">
+        </div>
+        <div class="copyright">
+            <p>Copyright©2017 shenzhihao.com. All rights reserved.</p>
+            <p style="font-size: 12px; opacity: 0.8;">Redesigned March 2026 • <a href="updates.html" style="color: rgba(255,255,255,0.9);">View changelog</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
